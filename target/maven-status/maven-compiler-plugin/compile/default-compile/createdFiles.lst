@@ -1,0 +1,4 @@
+br\com\caiohenriquedev\config\SpringInitConfig.class
+br\com\caiohenriquedev\controller\WelcomeController.class
+br\com\caiohenriquedev\config\RootConfig.class
+br\com\caiohenriquedev\config\SpringMvcConfig.class
