@@ -4,5 +4,7 @@ br\com\caiohenriquedev\dao\UsuarioDAO.class
 br\com\caiohenriquedev\config\SpringMvcConfig.class
 br\com\caiohenriquedev\domain\Usuario.class
 br\com\caiohenriquedev\controller\WelcomeController.class
+br\com\caiohenriquedev\domain\TipoSexo.class
 br\com\caiohenriquedev\config\RootConfig.class
+br\com\caiohenriquedev\conversor\TipoSexoConverter.class
 br\com\caiohenriquedev\dao\UsuarioDaoImpl.class

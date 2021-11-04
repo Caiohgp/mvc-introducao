@@ -40,6 +40,13 @@
                 <form:errors path="dtNascimento" cssClass="label label-danger"/>
             </div>
             <div class="form-group">
+                <label for="tipoSexo">Sexo: </label>
+                <form:select path="tipoSexo" class="form-control" >
+                	<form:options items="${sexos }"/>
+
+                </form:select>
+            </div>
+            <div class="form-group">
                 <button type="submit" class="btn btn-primary">Confirmar</button>
             </div>
         </form:form>

@@ -1,15 +1,25 @@
 package br.com.caiohenriquedev.domain;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 public class Usuario {
     private Long id;
+    @NotBlank
+    @Size(min = 3, max = 50)
     private String nome;
+    @NotBlank
+    @Size(min = 3, max = 50)
     private String sobrenome;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @NotNull(message = "O campo Data de Nascimento é requerido")
     private LocalDate dtNascimento;
+    private TipoSexo tipoSexo;
 
     public Usuario(){
 
@@ -26,6 +36,14 @@ public class Usuario {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.dtNascimento = dtNascimento;
+    }
+
+    public Usuario(Long id, String nome, String sobrenome, LocalDate dtNascimento, TipoSexo tipoSexo) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.dtNascimento = dtNascimento;
+        this.tipoSexo = tipoSexo;
     }
 
     @Override
@@ -67,5 +85,13 @@ public class Usuario {
 
     public void setDtNascimento(LocalDate dtNascimento) {
         this.dtNascimento = dtNascimento;
+    }
+
+    public TipoSexo getTipoSexo() {
+        return tipoSexo;
+    }
+
+    public void setTipoSexo(TipoSexo tipoSexo) {
+        this.tipoSexo = tipoSexo;
     }
 }
