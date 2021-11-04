@@ -19,9 +19,9 @@ public class UsuarioDaoImpl implements UsuarioDAO{
     private List<Usuario> createUserList() {
         if (us == null) {
             us = new LinkedList<>();
-            us.add(new Usuario(System.currentTimeMillis()+1L, "Ana", "da Silva"));
-            us.add(new Usuario(System.currentTimeMillis()+2L, "Luiz", "dos Santos"));
-            us.add(new Usuario(System.currentTimeMillis()+3L, "Mariana", "Mello"));
+            us.add(new Usuario(System.currentTimeMillis()+1L, "Ana", "da Silva", LocalDate.of(1998,04,23)));
+            us.add(new Usuario(System.currentTimeMillis()+2L, "Luiz", "dos Santos", LocalDate.of(1998,04,13)));
+            us.add(new Usuario(System.currentTimeMillis()+3L, "Mariana", "Mello", LocalDate.of(2000,04,19)));
             us.add(new Usuario(System.currentTimeMillis()+4L, "Caren", "Pereira"));
             us.add(new Usuario(System.currentTimeMillis()+5L, "Sonia", "Fagundes"));
             us.add(new Usuario(System.currentTimeMillis()+6L, "Norberto", "de Souza"));
@@ -42,6 +42,7 @@ public class UsuarioDaoImpl implements UsuarioDAO{
                 .forEach((u) -> {
                     u.setNome(usuario.getNome());
                     u.setSobrenome(usuario.getSobrenome());
+                    u.setDtNascimento(usuario.getDtNascimento());
                 });
     }
 

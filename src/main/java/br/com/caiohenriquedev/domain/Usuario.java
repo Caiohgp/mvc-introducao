@@ -1,9 +1,15 @@
 package br.com.caiohenriquedev.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
+
 public class Usuario {
     private Long id;
     private String nome;
     private String sobrenome;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate dtNascimento;
 
     public Usuario(){
 
@@ -13,6 +19,13 @@ public class Usuario {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
+    }
+
+    public Usuario(Long id, String nome, String sobrenome, LocalDate dtNascimento) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.dtNascimento = dtNascimento;
     }
 
     @Override
@@ -46,5 +59,13 @@ public class Usuario {
 
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
+    }
+
+    public LocalDate getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public void setDtNascimento(LocalDate dtNascimento) {
+        this.dtNascimento = dtNascimento;
     }
 }
